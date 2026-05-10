@@ -31,10 +31,10 @@ send_emails = st.checkbox("Send emails to clients")
 with st.expander("Expected CSV Format"):
     sample_df = pd.DataFrame({
         "invoice_no": ["INV001"],
-        "client_name": ["Rajesh Kumar"],
+        "client_name": ["Aayansh Tarafdar"],
         "amount": [45000],
         "due_date": ["2026-04-20"],
-        "email": ["rajesh@example.com"],
+        "email": ["aayansh@example.com"],
         "follow_up_count": [0],
     })
     st.dataframe(sample_df, use_container_width=True)
