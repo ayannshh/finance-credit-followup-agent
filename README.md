@@ -1,4 +1,3 @@
-## Live App
 [Open the App](https://finance-credit-followup-agent-43hbvjg6xunwjxp9bxwjze.streamlit.app/)
 
 # Finance Credit Follow-Up Email Agent
@@ -85,9 +84,6 @@ An AI-powered agent that helps finance teams automatically generate follow-up em
 
 ### Unauthorized Access
 - Runs locally during development.
-
-### Email Safety
-- Dry-run mode; no real emails are sent.
 
 ---
 
