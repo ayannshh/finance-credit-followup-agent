@@ -1,3 +1,4 @@
+import os
 import streamlit as st
 import pandas as pd
 
@@ -54,6 +55,7 @@ if uploaded_file is not None:
         emails_sent = 0
 
         # Clear previous audit log
+        os.makedirs("logs", exist_ok=True)
         open("logs/audit_log.csv", "w").close()
 
         # Process each invoice
@@ -62,7 +64,7 @@ if uploaded_file is not None:
                 row["due_date"]
             )
 
-            # Not due
+            # Not due yet
             if stage == "Not Due":
                 log_email(
                     row["invoice_no"],
@@ -74,7 +76,7 @@ if uploaded_file is not None:
                 )
                 continue
 
-            # Escalation
+            # Manual review / escalation
             if stage == "Escalation":
                 escalated += 1
 
@@ -112,6 +114,7 @@ if uploaded_file is not None:
                 try:
                     send_email(row["email"], email_text)
                     emails_sent += 1
+
                     st.success(
                         f"Email sent to "
                         f"{row['client_name']} ({row['email']})"
@@ -148,9 +151,10 @@ if uploaded_file is not None:
 
         st.success("Processing completed successfully.")
 
-        # Load and display audit log
+        # Load audit log
         log_df = pd.read_csv("logs/audit_log.csv")
 
+        # Show audit log
         st.subheader("Audit Log")
         st.dataframe(log_df, use_container_width=True)
 
