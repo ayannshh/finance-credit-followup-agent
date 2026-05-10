@@ -1,0 +1,5 @@
+invoice_no,client_name,amount,due_date,email,follow_up_count
+INV001,Rajesh Kumar,45000,2026-04-20,rajesh@example.com,0
+INV002,ABC Pvt Ltd,120000,2026-04-05,accounts@abc.com,2
+INV003,Tech Solutions,78000,2026-03-25,billing@techsolutions.com,3
+INV004,Global Traders,150000,2026-03-01,finance@globaltraders.com,4
