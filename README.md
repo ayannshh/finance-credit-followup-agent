@@ -1,3 +1,6 @@
+## Live App
+[Open the App](https://finance-credit-followup-agent-43hbvjg6xunwjxp9bxwjze.streamlit.app/)
+
 # Finance Credit Follow-Up Email Agent
 
 An AI-powered agent that helps finance teams automatically generate follow-up emails for overdue invoices. The system reads invoice data from a CSV file, determines the appropriate follow-up stage based on the number of overdue days, generates personalized emails using Gemini (with a fallback template when API quota is unavailable), and records all actions in an audit log.
